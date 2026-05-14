@@ -253,7 +253,8 @@ h3,
 /* --- SECCIÓN DE COLUMNAS CON ICONOS --- */
 
 .seccion-columnas {
-    max-width: 1200px;
+    max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     padding: 60px 5%;
 }
@@ -351,5 +352,36 @@ h3,
     .lista-juegos img.media-game {
         max-width: 95%;
         margin: 10px auto;
+    }
+}
+
+/* --- SECCIÓN MI MÚSICA FAVORITA --- */
+.columnas-musica {
+    display: flex;
+    flex-wrap: nowrap; /* CRÍTICO: Fuerza a que todos los elementos se mantengan en una sola fila */
+    gap: 20px;
+    justify-content: center; 
+    width: 100%;
+    max-width: 100%; 
+    padding: 20px 5%;
+    overflow-x: auto; /* Si la pantalla es muy pequeña, la fila completa hará scroll horizontal en vez de amontonarse */
+    overflow: hidden;
+}
+
+.columnas-musica .contenedor-spotify {
+    flex: 0 0 auto; /* Evita que los contenedores se encojan y rompan el iframe */
+    width: 280px; /* Ancho fijo ideal para que Spotify no genere barras de scroll */
+    display: flex;
+    justify-content: center;
+}
+
+.columnas-musica iframe {
+    border: none;
+    overflow: hidden; /* Fuerza a ocultar cualquier barra interna */
+}
+
+@media (max-width: 1200px) {
+    .seccion-columnas {
+        max-width: 100%;
     }
 }
